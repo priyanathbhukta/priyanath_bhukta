@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
 
-## Project info
+# Priyanath Bhukta - Portfolio Website
 
-**URL**: https://lovable.dev/projects/158f4742-e7c2-49dc-aab8-bf7f6193979d
+A modern, dark-themed portfolio website for Priyanath Bhukta, a Computer Science Engineer.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- Responsive design that works on all devices
+- Dark theme with modern aesthetics
+- Multiple pages for different content sections
+- Resume download functionality
+- Project showcase
+- Contact form with validation
 
-**Use Lovable**
+## Technologies Used
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/158f4742-e7c2-49dc-aab8-bf7f6193979d) and start prompting.
+- React.js
+- TypeScript
+- Tailwind CSS
+- shadcn/ui Components
+- React Router
+- Lucide Icons
 
-Changes made via Lovable will be committed automatically to this repo.
+## Directory Structure
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Footer.tsx
+│   │   ├── NavBar.tsx
+│   │   └── PageLayout.tsx
+│   ├── ui/
+│   │   └── ... (shadcn components)
+│   └── TechLogos.tsx
+├── hooks/
+│   └── use-toast.ts
+├── lib/
+│   └── utils.ts
+├── pages/
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── Experience.tsx
+│   ├── Index.tsx
+│   ├── NotFound.tsx
+│   └── Projects.tsx
+├── types/
+│   ├── data.ts
+│   └── index.ts
+├── App.css
+├── App.tsx
+├── index.css
+└── main.tsx
 ```
 
-**Edit a file directly in GitHub**
+## Setup and Installation
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Build for production: `npm run build`
+5. Preview the production build: `npm run preview`
 
-**Use GitHub Codespaces**
+## Customization
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The portfolio is designed to be easily customizable:
 
-## What technologies are used for this project?
+- Change colors in `tailwind.config.ts`
+- Update personal information in `src/types/data.ts`
+- Add or remove pages by updating routes in `App.tsx`
 
-This project is built with:
+## License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/158f4742-e7c2-49dc-aab8-bf7f6193979d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT
