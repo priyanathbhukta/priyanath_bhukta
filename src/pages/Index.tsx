@@ -1,10 +1,10 @@
-
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, ArrowRight, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { downloadResume } from "@/lib/resumeUtils";
 
 // Tech stack icons would be imported or embedded SVGs in a real implementation
 const techStack = [
@@ -80,8 +80,8 @@ export default function Home() {
               
               <div className="flex flex-wrap gap-4">
                 <Button 
-                  onClick={handleResumeDownload}
-                  className="bg-portfolio-accent hover:bg-portfolio-accentDark text-white"
+                  onClick={downloadResume}
+                  className="bg-portfolio-accent hover:bg-portfolio-accentDark text-white shadow-lg shadow-portfolio-primary/30 hover:shadow-portfolio-primary/40 transition-shadow duration-300"
                   size="lg"
                 >
                   <Download className="mr-2 h-4 w-4" /> Download Resume
