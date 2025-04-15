@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +16,7 @@
     --popover: 222 47% 9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 252 79% 65%;
+    --primary: 185 100% 36%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217 32% 18%;
@@ -24,7 +25,7 @@
     --muted: 217 32% 18%;
     --muted-foreground: 215 20% 70%;
 
-    --accent: 252 79% 65%;
+    --accent: 185 100% 36%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 30%;
@@ -32,7 +33,7 @@
 
     --border: 217 32% 18%;
     --input: 217 32% 18%;
-    --ring: 252 79% 65%;
+    --ring: 185 100% 36%;
 
     --radius: 0.5rem;
   }
@@ -40,7 +41,7 @@
 
 @layer base {
   * {
-    @apply border-border selection:bg-portfolio-accent/20 selection:text-white;
+    @apply border-border selection:bg-portfolio-primary/20 selection:text-white;
   }
 
   html {
@@ -48,21 +49,21 @@
   }
 
   body {
-    @apply bg-portfolio-dark text-portfolio-text antialiased;
+    @apply bg-portfolio-dark text-portfolio-text antialiased overflow-x-hidden;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
     background-size: 30px 30px;
-    background-image: radial-gradient(rgba(109, 87, 242, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(0, 183, 195, 0.05) 1px, transparent 1px);
   }
 }
 
 @layer components {
   .gradient-border {
-    @apply relative rounded-md after:absolute after:inset-0 after:rounded-md after:p-[1px] after:bg-gradient-to-r after:from-portfolio-accent after:via-purple-500 after:to-portfolio-accent after:-z-10;
+    @apply relative rounded-md after:absolute after:inset-0 after:rounded-md after:p-[1px] after:bg-gradient-to-r after:from-portfolio-primary after:via-cyan-500 after:to-portfolio-primary after:-z-10;
   }
 
   .dot-pattern {
     background-size: 20px 20px;
-    background-image: radial-gradient(rgba(109, 87, 242, 0.1) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(0, 183, 195, 0.1) 1px, transparent 1px);
   }
   
   .glassmorphism {
@@ -71,6 +72,25 @@
 
   .code-block {
     @apply bg-portfolio-code p-4 rounded-md font-mono text-sm;
+  }
+  
+  /* Background light effects */
+  .light-orb {
+    @apply absolute rounded-full bg-portfolio-primary/20 blur-2xl pointer-events-none animate-glow-pulse;
+  }
+  
+  .glow-line {
+    @apply absolute h-[1px] bg-gradient-to-r from-transparent via-portfolio-primary/50 to-transparent animate-pulse;
+  }
+  
+  .light-dots {
+    @apply absolute w-full h-full opacity-40 pointer-events-none;
+    background-image: radial-gradient(rgba(0, 183, 195, 0.2) 2px, transparent 2px);
+    background-size: 50px 50px;
+  }
+  
+  .rotating-polygon {
+    @apply absolute opacity-10 animate-rotate-slow pointer-events-none;
   }
 }
 
@@ -85,10 +105,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: theme('colors.portfolio.accent');
+  background: theme('colors.portfolio.primary');
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: theme('colors.portfolio.accentLight');
+  background: theme('colors.portfolio.primaryLight');
 }

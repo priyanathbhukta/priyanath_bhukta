@@ -1,10 +1,11 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { NavItem } from "@/types";
+import { downloadResume } from "@/lib/resumeUtils";
 
 const navItems: NavItem[] = [
   { title: "Home", href: "/" },
@@ -38,14 +39,6 @@ export function NavBar() {
     setIsOpen(false);
   }, [location.pathname]);
 
-  const handleResumeDownload = () => {
-    // This would be replaced with actual resume file
-    const link = document.createElement("a");
-    link.href = "/resume-priyanath-bhukta.pdf";
-    link.download = "Resume-Priyanath-Bhukta.pdf";
-    link.click();
-  };
-
   return (
     <header
       className={cn(
@@ -55,7 +48,7 @@ export function NavBar() {
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="font-bold text-xl text-portfolio-accent">
+          <div className="font-bold text-xl text-portfolio-primary">
             <span className="font-mono">&lt;</span>PB<span className="font-mono">/&gt;</span>
           </div>
         </Link>
@@ -67,9 +60,9 @@ export function NavBar() {
               key={item.href}
               to={item.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-portfolio-accent relative",
+                "text-sm font-medium transition-colors hover:text-portfolio-primary relative",
                 location.pathname === item.href
-                  ? "text-portfolio-accent after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-portfolio-accent"
+                  ? "text-portfolio-primary after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-portfolio-primary"
                   : "text-portfolio-text/80"
               )}
             >
@@ -77,19 +70,19 @@ export function NavBar() {
             </Link>
           ))}
           <Button 
-            onClick={handleResumeDownload}
+            onClick={() => window.location.href = "/admin"}
             variant="default" 
-            className="bg-portfolio-accent hover:bg-portfolio-accentDark text-white ml-2"
+            className="bg-portfolio-primary hover:bg-portfolio-primaryDark text-white ml-2"
           >
-            <Download size={16} className="mr-2" />
-            Resume
+            <Shield size={16} className="mr-2" />
+            Admin
           </Button>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-portfolio-text hover:text-portfolio-accent"
+          className="md:hidden text-portfolio-text hover:text-portfolio-primary"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -107,20 +100,20 @@ export function NavBar() {
                 className={cn(
                   "py-2 px-4 text-sm font-medium rounded-md transition-colors",
                   location.pathname === item.href
-                    ? "bg-portfolio-accent/10 text-portfolio-accent"
-                    : "text-portfolio-text hover:bg-portfolio-accent/5"
+                    ? "bg-portfolio-primary/10 text-portfolio-primary"
+                    : "text-portfolio-text hover:bg-portfolio-primary/5"
                 )}
               >
                 {item.title}
               </Link>
             ))}
             <Button 
-              onClick={handleResumeDownload}
+              onClick={() => window.location.href = "/admin"}
               variant="default" 
-              className="bg-portfolio-accent hover:bg-portfolio-accentDark text-white my-2 w-full"
+              className="bg-portfolio-primary hover:bg-portfolio-primaryDark text-white my-2 w-full"
             >
-              <Download size={16} className="mr-2" />
-              Download Resume
+              <Shield size={16} className="mr-2" />
+              Admin Access
             </Button>
           </div>
         </div>

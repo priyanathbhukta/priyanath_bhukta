@@ -28,14 +28,14 @@ export default function Experience() {
   return (
     <div className="container mx-auto px-4 py-16">
       <section>
-        <h1 className="text-3xl md:text-4xl font-bold mb-10 text-portfolio-accent">Professional Experience</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-10 text-portfolio-primary">Professional Experience</h1>
         
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <Card key={index} className="bg-portfolio-darker border-portfolio-accent/20">
+            <Card key={index} className="bg-portfolio-darker border-portfolio-primary/20">
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <h3 className="font-semibold text-xl text-portfolio-accent">{exp.position}</h3>
+                  <h3 className="font-semibold text-xl text-portfolio-primary">{exp.position}</h3>
                   <span className="text-sm text-portfolio-muted mt-2 md:mt-0">{exp.duration}</span>
                 </div>
                 <p className="text-portfolio-text mb-4">{exp.company}</p>

@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,13 +63,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom portfolio colors
+				// Custom portfolio colors - updated with teal theme
 				portfolio: {
-					dark: '#0A0F16',
-					darker: '#060A10',
-					accent: '#6D57F2',
-					accentDark: '#5842E3',
-					accentLight: '#7F6DF3',
+					dark: '#0A1214',
+					darker: '#060A0B',
+					primary: '#00B7C3',
+					primaryDark: '#009DA8',
+					primaryLight: '#33C3CC',
 					text: '#E6E8EC',
 					muted: '#8E9196',
 					code: '#1E2A3A'
@@ -105,12 +106,24 @@ export default {
 					'100%': { transform: 'scale(1)', opacity: '1' }
 				},
 				'glow': {
-					'0%, 100%': { boxShadow: '0 0 5px rgba(109, 87, 242, 0.5)' },
-					'50%': { boxShadow: '0 0 20px rgba(109, 87, 242, 0.8)' }
+					'0%, 100%': { boxShadow: '0 0 5px rgba(0, 183, 195, 0.5)' },
+					'50%': { boxShadow: '0 0 20px rgba(0, 183, 195, 0.8)' }
 				},
 				'gradient-x': {
 					'0%, 100%': { backgroundPosition: '0% 50%' },
 					'50%': { backgroundPosition: '100% 50%' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { opacity: '0.6' },
+					'50%': { opacity: '1' }
+				},
+				'rotate-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
@@ -119,11 +132,14 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out',
 				'scale-in': 'scale-in 0.3s ease-out',
 				'glow': 'glow 2s ease-in-out infinite',
-				'gradient-x': 'gradient-x 15s ease infinite'
+				'gradient-x': 'gradient-x 15s ease infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
+				'rotate-slow': 'rotate-slow 12s linear infinite'
 			},
 			backgroundImage: {
-				'grid-pattern': 'radial-gradient(rgba(109, 87, 242, 0.15) 1px, transparent 1px)',
-				'gradient-radial': 'radial-gradient(rgba(109, 87, 242, 0.2) 1px, transparent 1px)'
+				'grid-pattern': 'radial-gradient(rgba(0, 183, 195, 0.15) 1px, transparent 1px)',
+				'gradient-radial': 'radial-gradient(rgba(0, 183, 195, 0.2) 1px, transparent 1px)'
 			}
 		}
 	},
