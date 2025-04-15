@@ -1,3 +1,4 @@
+
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -68,7 +69,7 @@ export default function Home() {
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
                 Hi, I'm{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-portfolio-accent to-portfolio-accentLight animate-gradient-x">
+                <span className="text-white bg-clip-text bg-gradient-to-r from-portfolio-accent to-portfolio-accentLight animate-gradient-x">
                   Priyanath Bhukta
                 </span>
               </h1>
