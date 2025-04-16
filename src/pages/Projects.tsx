@@ -14,7 +14,7 @@ const projects = [
       "Employed BCELoss for binary classification to ensure accurate tumour identification.",
     ],
     timeline: "Oct 2024",
-    imagePath: "/project-medical-ai.jpg", 
+    imagePath: "/lovable-uploads/118d63c8-7ad3-43ca-97fb-e80f947e4f07.png", 
     links: {
       github: "#",
       live: "#"
@@ -30,7 +30,7 @@ const projects = [
       "Achieved 93.27% accuracy on the validation dataset through meticulous testing."
     ],
     timeline: "Sep - Oct 2024",
-    imagePath: "/project-heart-data.jpg",
+    imagePath: "/lovable-uploads/b177d163-9ac5-45f2-88bf-a702b59d2dbe.png",
     links: {
       github: "#",
       live: "#"
